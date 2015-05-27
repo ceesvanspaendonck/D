@@ -19,9 +19,9 @@ public class Spel extends JPanel
 
         Speler speler = new Speler(10, 14);
         
-        frame.add(speler);
+        frame.add(speler); //deze komt niet in beeld???? maar als er geen doolhof wordt toegevoegd aan frame wel
         
-        Doolhof doolhof = new Doolhof(10, 13);
+        Doolhof doolhof = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal). grid = 13 x 10
         
         frame.add(doolhof);
     }
