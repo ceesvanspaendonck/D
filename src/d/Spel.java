@@ -18,11 +18,9 @@ public class Spel extends JPanel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Speler speler = new Speler(10, 14);
-        
-        frame.add(speler); //deze komt niet in beeld???? maar als er geen doolhof wordt toegevoegd aan frame wel
-        
         Doolhof doolhof = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal). grid = 13 x 10
         
-        frame.add(doolhof);
+        Drawing drawing = new Drawing(speler, doolhof, 13, 10, 13, 10);
+        frame.add(drawing);
     }
 }

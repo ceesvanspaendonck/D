@@ -12,10 +12,8 @@ import javax.swing.*;
 public class Doolhof extends JPanel
 {
     int rows; //13 (horizontaal)
-    int columns; //10 (verticaal)
-    
-    
-    int [][] hoi = {{1,1,1,1,1,1,1,1,1,1,1,1,1},
+    int columns; //10 (verticaal
+    int [][] grid = {{1,1,1,1,1,1,1,1,1,1,1,1,1},
                     {1,0,1,0,1,0,1,0,0,0,0,0,1},
                     {1,0,1,0,0,0,1,0,1,1,1,0,1},
                     {1,0,0,0,1,1,1,0,0,0,0,0,1},
@@ -40,7 +38,7 @@ public class Doolhof extends JPanel
         {
             for (int j = 0; j < columns; j++) 
             {
-                if (hoi[j][i]==(1))
+                if (grid[j][i]==(1))
                 {
                     g.setColor(Color.red);
                     g.fillRect(j*25, i*25, 20, 20);   
