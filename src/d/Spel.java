@@ -21,7 +21,7 @@ public class Spel extends JPanel
         Speler speler = new Speler(10, 14, doolhof);
         
         PressListener listener = new PressListener(speler);
-        
+        frame.addKeyListener(listener);
         Drawing drawing = new Drawing(speler, doolhof, 13, 10, 13, 10);
         frame.add(drawing);
     }
