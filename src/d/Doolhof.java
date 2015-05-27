@@ -13,7 +13,7 @@ public class Doolhof extends JPanel
 {
     int rows; //13 (horizontaal)
     int columns; //10 (verticaal
-    int [][] grid = {{1,1,1,1,1,1,1,1,1,1,1,1,1},
+    public int [][] grid = {{1,1,1,1,1,1,1,1,1,1,1,1,1},
                     {1,2,1,0,1,0,1,0,0,0,0,0,1},
                     {1,0,1,0,0,0,1,0,1,1,1,0,1},
                     {1,0,0,0,1,1,1,0,0,0,0,0,1},
