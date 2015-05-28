@@ -12,6 +12,7 @@ import javax.swing.*;
 public class Speler extends JPanel
 {
     private int x, y;
+    private int spelerx,spelery;
     private int[][] grid;
     public Speler(int x, int y, Doolhof doolhof)
     {
@@ -26,25 +27,33 @@ public class Speler extends JPanel
         {
             for (int j = 0; j < grid.length; j++)
             {
-                if(grid[i][j] == 0)
+                if(grid[spelerx][spelery] == 0)
                 {
                     if(richting.equals("up"))
                     {
                         System.out.println("Up");
+                        spelerx = spelerx + ;
+                        spelery = spelery + ;
                         //verplaatsspeler
                     }
                     else if(richting.equals("right"))
                     {
                         System.out.println("Right");
+                        spelerx = spelerx + ;
+                        spelery = spelery + ;
                         //verplaatsspeler
                     }
                     else if(richting.equals("down"))
                     {
+                        spelerx = spelerx + ;
+                        spelery = spelery + ;
                         System.out.println("Down");
                         //verplaatsspeler
                     }
                     else if(richting.equals("left"))
                     {
+                        spelerx = spelerx + ;
+                        spelery = spelery + ;
                         System.out.println("Left");
                         //verplaatsspeler
                     }
