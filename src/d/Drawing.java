@@ -33,6 +33,7 @@ public class Drawing extends JPanel
             for (int j = 0; j < columns; j++) //13
             {
                 //System.out.println("i (rows): " + i + ", j(columns): " + j + ", gridwaarde(j x i): + " + doolhof.grid[i][j]);
+                
                 if (doolhof.grid[j][i] == (1))
                 {
                     g.setColor(Color.red);

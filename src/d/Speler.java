@@ -26,51 +26,34 @@ public class Speler extends JPanel
     {
         if(richting.equals("up"))
         {
-            System.out.println("Up");
-            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie up: " + this.gridX + "," + (this.gridY-1) + " -  Waarde: " + grid[this.gridX][(this.gridY-1)]);
+            if(grid[(this.gridY-1)][this.gridX] == 0)
+            {
+                //verplaats
+            }
             
             //verplaatsspeler
         }
         else if(richting.equals("right"))
         {
-            System.out.println("Right");
-            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie right: " + (this.gridX + 1) + "," + this.gridY + " -  Waarde: " + grid[(this.gridX+1)][this.gridY]);
-            //verplaatsspeler
+            if(grid[this.gridY][(this.gridX+1)] == 0)
+            {
+                //verplaatsspeler
+            }
         }
         else if(richting.equals("down"))
         {
-            System.out.println("Down");
-            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie down: " + this.gridX + "," + (this.gridY + 1) + " -  Waarde: " + grid[this.gridX][(this.gridY+1)]);
-            //verplaatsspeler
+            if(grid[(this.gridY + 1)][this.gridX] == 0)
+            {
+                //verplaatsspeler
+            }
         }
         else if(richting.equals("left"))
         {
-            System.out.println("Left");
-            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie left: " + (this.gridX - 1) + "," + this.gridY + " -  Waarde: " + grid[(this.gridX-1)][this.gridY]);
-            //verplaatsspeler
+            if(grid[this.gridY][(this.gridX-1)] == 0)
+            {
+                //verplaatsspeler
+            }
         }
-        
-        /*if(richting.equals("up") && (grid[this.gridX][this.gridY - 1] != 1 ))
-        {
-            System.out.println("Up");
-            //verplaatsspeler
-        }
-        else if(richting.equals("right") && (grid[(this.gridX + 1)][this.gridY] != 1))
-        {
-            System.out.println("Right");
-            //verplaatsspeler
-        }
-        else if(richting.equals("down") && (grid[this.gridX][(this.gridY - 1)] != 1))
-        {
-            System.out.println("Down");
-            //verplaatsspeler
-        }
-        else if(richting.equals("left") && (grid[(this.gridX - 1)][this.gridY] != 1))
-        {
-            System.out.println("Left");
-            //verplaatsspeler
-        }*/
-
     }
     
     @Override
