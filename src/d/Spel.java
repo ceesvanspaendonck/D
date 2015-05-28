@@ -17,8 +17,8 @@ public class Spel extends JPanel
         frame.setSize(400,400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        Doolhof doolhof = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal). grid = 13 x 10
-        Speler speler = new Speler(10, 14, doolhof);
+        Doolhof doolhof = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal)
+        Speler speler = new Speler(10, 14, doolhof); //controleren waarom 14
         
         PressListener listener = new PressListener(speler);
         frame.addKeyListener(listener);

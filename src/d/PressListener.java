@@ -25,7 +25,6 @@ public class PressListener implements KeyListener
     @Override
     public void keyPressed(KeyEvent ke)
     {
-        System.out.println("test");
         int key = ke.getKeyCode();
         if (key == KeyEvent.VK_UP) {
             speler.move("up");

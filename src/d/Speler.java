@@ -11,48 +11,65 @@ import javax.swing.*;
 
 public class Speler extends JPanel
 {
-    private int x, y;
+    private int x, y, gridX, gridY;
     private int[][] grid;
     public Speler(int x, int y, Doolhof doolhof)
     {
         this.x = x;
         this.y = y;
+        this.gridX = 2;
+        this.gridY = 2;
         this.grid = doolhof.grid;
     }
 
     public void move(String richting)
     {
-        int spelerx = 0;
-        int spelery = 0;
-
-                    if(richting.equals("up")&&( grid[spelerx][spelery+1]!= 1 ))
-                    {
-                        System.out.println("Up");
-                           //verplaatsspeler
-                        spelerx = spelerx ;
-                        spelery ++ ;
-                    }
-                    else if(richting.equals("right")&&( grid[spelerx + 1][spelery]!= 1 ))
-                    {
-                        System.out.println("Right");
-                      spelerx ++ ;
-                      spelery =spelery ;
-                        //verplaatsspeler
-                    }
-                    else if(richting.equals("down")&&( grid[spelerx][spelery- 1]!= 1 ))
-                    {
-                        System.out.println("Down");
-                        spelerx =spelerx ;
-                        spelery -- ;
-                        //verplaatsspeler
-                    }
-                    else if(richting.equals("left")&&( grid[spelerx-1][spelery]!= 1 ))
-                    {
-                        System.out.println("Left");
-                        spelerx -- ;
-                        spelery = spelery ;
-                        //verplaatsspeler
-                    }
+        System.out.println("Huidige coordinaten =  speler.gridX: " + this.gridX + ", speler.gridY: " + this.gridY);
+        
+        if(richting.equals("up"))
+        {
+            System.out.println("Coordinaten up = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX][this.gridY - 1]);
+            //verplaatsspeler
+        }
+        else if(richting.equals("right"))
+        {
+            System.out.println("Coordinaten right = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX + 1][this.gridY]);
+            System.out.println("Right");
+            //verplaatsspeler
+        }
+        else if(richting.equals("down"))
+        {
+            System.out.println("Coordinaten left = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX][this.gridY + 1]);
+            System.out.println("Down");
+            //verplaatsspeler
+        }
+        else if(richting.equals("left"))
+        {
+            System.out.println("Coordinaten down = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX - 1][this.gridY]);
+            System.out.println("Left");
+            //verplaatsspeler
+        }
+        
+        /*if(richting.equals("up") && (grid[this.gridX][this.gridY - 1] != 1 ))
+        {
+            System.out.println("Up");
+            //verplaatsspeler
+        }
+        else if(richting.equals("right") && (grid[(this.gridX + 1)][this.gridY] != 1))
+        {
+            System.out.println("Right");
+            //verplaatsspeler
+        }
+        else if(richting.equals("down") && (grid[this.gridX][(this.gridY - 1)] != 1))
+        {
+            System.out.println("Down");
+            //verplaatsspeler
+        }
+        else if(richting.equals("left") && (grid[(this.gridX - 1)][this.gridY] != 1))
+        {
+            System.out.println("Left");
+            //verplaatsspeler
+        }*/
 
     }
     

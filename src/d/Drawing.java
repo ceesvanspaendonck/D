@@ -25,18 +25,20 @@ public class Drawing extends JPanel
     }
     
     
-    public void paintComponent (Graphics g){
+    public void paintComponent (Graphics g)
+    {
         super.paintComponent(g);
-        for (int i = 0; i < columns; i++) 
+        for (int i = 0; i < rows; i++)  //10
         {
-            for (int j = 0; j < rows; j++) 
+            for (int j = 0; j < columns; j++) //13
             {
-                if (doolhof.grid[i][j]==(1))
+                //System.out.println("i (rows): " + i + ", j(columns): " + j + ", gridwaarde(j x i): + " + doolhof.grid[i][j]);
+                if (doolhof.grid[j][i] == (1))
                 {
                     g.setColor(Color.red);
-                    g.fillRect(i*25, j*25, 20, 20);   
+                    g.fillRect(i*25, j*25, 20, 20);
                 }
-                if (doolhof.grid[i][j]==(2))
+                if (doolhof.grid[j][i]==(2))
                 {
                     g.setColor(Color.ORANGE);
                     g.fillRect(i*25, j*25,20,20);
