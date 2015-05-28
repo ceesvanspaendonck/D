@@ -12,14 +12,14 @@ public class Drawing extends JPanel
 {
     private Speler speler;
     private Doolhof doolhof;
-    int x, y, rows, columns;
+    int gridX, gridY, rows, columns;
     
-    public Drawing(Speler speler, Doolhof doolhof, int x, int y, int rows, int columns)
+    public Drawing(Speler speler, Doolhof doolhof, int gridX, int gridY, int rows, int columns)
     {
         this.speler = speler;
         this.doolhof = doolhof;
-        this.x = x;
-        this.y = y;
+        this.gridX = gridX;
+        this.gridY = gridY;
         this.rows = rows;
         this.columns = columns;
     }
@@ -32,8 +32,6 @@ public class Drawing extends JPanel
         {
             for (int j = 0; j < columns; j++) //13
             {
-                //System.out.println("i (rows): " + i + ", j(columns): " + j + ", gridwaarde(j x i): + " + doolhof.grid[i][j]);
-                
                 if (doolhof.grid[j][i] == (1))
                 {
                     g.setColor(Color.red);
@@ -47,5 +45,7 @@ public class Drawing extends JPanel
             }
         repaint();
      }
+        
+     
 }
 }

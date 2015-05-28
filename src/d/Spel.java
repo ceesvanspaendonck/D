@@ -17,12 +17,12 @@ public class Spel extends JPanel
         frame.setSize(400,400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        Doolhof doolhof = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal)
-        Speler speler = new Speler(10, 13, doolhof); //controleren waarom 14
+        Doolhof doolhofP = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal)
+        Speler speler = new Speler(1, 6, doolhofP); //controleren waarom 14
         
         PressListener listener = new PressListener(speler);
         frame.addKeyListener(listener);
-        Drawing drawing = new Drawing(speler, doolhof, 13, 10, 13, 10);
+        Drawing drawing = new Drawing(speler, doolhofP, 1, 6, 13, 10);
         frame.add(drawing);
     }
 }
