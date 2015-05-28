@@ -18,7 +18,7 @@ public class Spel extends JPanel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         Doolhof doolhof = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal)
-        Speler speler = new Speler(10, 14, doolhof); //controleren waarom 14
+        Speler speler = new Speler(10, 13, doolhof); //controleren waarom 14
         
         PressListener listener = new PressListener(speler);
         frame.addKeyListener(listener);

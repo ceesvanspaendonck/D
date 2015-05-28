@@ -36,12 +36,12 @@ public class Drawing extends JPanel
                 if (doolhof.grid[j][i] == (1))
                 {
                     g.setColor(Color.red);
-                    g.fillRect(i*25, j*25, 20, 20);
+                    g.fillRect(i*25, j*25, 24, 24);
                 }
                 if (doolhof.grid[j][i]==(2))
                 {
                     g.setColor(Color.ORANGE);
-                    g.fillRect(i*25, j*25,20,20);
+                    g.fillRect(i*25, j*25, 22, 22);
                 }
             }
         repaint();

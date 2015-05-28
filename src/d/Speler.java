@@ -17,36 +17,36 @@ public class Speler extends JPanel
     {
         this.x = x;
         this.y = y;
-        this.gridX = 2;
-        this.gridY = 2;
+        this.gridX = 1;
+        this.gridY = 1;
         this.grid = doolhof.grid;
     }
 
     public void move(String richting)
     {
-        System.out.println("Huidige coordinaten =  speler.gridX: " + this.gridX + ", speler.gridY: " + this.gridY);
-        
         if(richting.equals("up"))
         {
-            System.out.println("Coordinaten up = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX][this.gridY - 1]);
+            System.out.println("Up");
+            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie up: " + this.gridX + "," + (this.gridY-1) + " -  Waarde: " + grid[this.gridX][(this.gridY-1)]);
+            
             //verplaatsspeler
         }
         else if(richting.equals("right"))
         {
-            System.out.println("Coordinaten right = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX + 1][this.gridY]);
             System.out.println("Right");
+            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie right: " + (this.gridX + 1) + "," + this.gridY + " -  Waarde: " + grid[(this.gridX+1)][this.gridY]);
             //verplaatsspeler
         }
         else if(richting.equals("down"))
         {
-            System.out.println("Coordinaten left = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX][this.gridY + 1]);
             System.out.println("Down");
+            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie down: " + this.gridX + "," + (this.gridY + 1) + " -  Waarde: " + grid[this.gridX][(this.gridY+1)]);
             //verplaatsspeler
         }
         else if(richting.equals("left"))
         {
-            System.out.println("Coordinaten down = grid[speler.gridX][speler.gridY - 1]: " + grid[this.gridX - 1][this.gridY]);
             System.out.println("Left");
+            System.out.println("Huidige locatie: " + this.gridX + "," + this.gridY + " - Locatie left: " + (this.gridX - 1) + "," + this.gridY + " -  Waarde: " + grid[(this.gridX-1)][this.gridY]);
             //verplaatsspeler
         }
         
