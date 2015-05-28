@@ -11,28 +11,25 @@ import javax.swing.*;
 
 public class Doolhof extends JPanel
 {
-    int rows; //horizontaal, dus 10 onder elkaar
-    int columns; //verticaal, dus 13 naast elkaar 
-    public int [][] grid = {{1,1,1,1,1,1,1,1,1,1,1,1,1},
-                            {1,0,0,0,1,0,1,0,0,0,0,0,1},
-                            {1,0,1,0,0,0,1,0,1,1,1,0,1},
-                            {1,0,0,0,1,1,1,0,0,0,0,0,1},
-                            {1,0,1,0,0,0,0,0,1,1,1,0,1},
+    public static int rows; //horizontaal, dus 10 onder elkaar
+    public static int columns; //verticaal, dus 13 naast elkaar 
+    public static int [][] grid = {
+                            {1,1,1,1,1,1,1,1,1,1,1,1,1},
+                            {1,0,0,0,1,0,0,0,0,0,0,0,1},
+                            {1,0,1,0,1,0,1,0,1,1,1,0,1},
+                            {1,0,1,0,1,0,1,0,0,0,0,0,1},
+                            {1,0,0,0,0,0,1,0,1,1,1,0,1},
                             {1,0,1,0,1,1,1,0,1,0,0,0,1},
                             {1,2,1,0,1,0,0,0,1,1,1,0,1},
                             {1,0,1,0,1,1,1,0,1,0,1,0,1},
                             {1,0,0,0,0,0,0,0,0,0,1,0,1},
                             {1,1,1,1,1,1,1,1,1,1,1,1,1}};
     
-    public int [][] grid2 = {{1,1,1,1},
-                            {1,2,1,1},
-                            {1,1,1,1},
-                            {1,1,1,1}};
-    
-
     public Doolhof(int rows, int columns)
     {
         this.rows = rows;
         this.columns = columns;
     }
+    
+    
 }
