@@ -22,35 +22,38 @@ public class Speler extends JPanel
 
     public void move(String richting)
     {
-        for (int i = 0; i < grid.length; i++)
-        {
-            for (int j = 0; j < grid.length; j++)
-            {
-                if(grid[spelerx][spelery] == 0)
-                {
-                    if(richting.equals("up"))
+        int spelerx = 0;
+        int spelery = 0;
+
+                    if(richting.equals("up")&&( grid[spelerx][spelery+1]!= 1 ))
                     {
                         System.out.println("Up");
-                        //verplaatsspeler
+                           //verplaatsspeler
+                        spelerx = spelerx ;
+                        spelery ++ ;
                     }
-                    else if(richting.equals("right"))
+                    else if(richting.equals("right")&&( grid[spelerx + 1][spelery]!= 1 ))
                     {
                         System.out.println("Right");
+                      spelerx ++ ;
+                      spelery =spelery ;
                         //verplaatsspeler
                     }
-                    else if(richting.equals("down"))
+                    else if(richting.equals("down")&&( grid[spelerx][spelery- 1]!= 1 ))
                     {
                         System.out.println("Down");
+                        spelerx =spelerx ;
+                        spelery -- ;
                         //verplaatsspeler
                     }
-                    else if(richting.equals("left"))
+                    else if(richting.equals("left")&&( grid[spelerx-1][spelery]!= 1 ))
                     {
                         System.out.println("Left");
+                        spelerx -- ;
+                        spelery = spelery ;
                         //verplaatsspeler
                     }
-                }
-            }
-        }
+
     }
     
     @Override
