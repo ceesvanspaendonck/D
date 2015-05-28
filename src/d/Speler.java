@@ -28,6 +28,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
                 this.gridY = this.gridY - 1;
+                Doolhof.stappen++;
             }
             else
             {
@@ -41,6 +42,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
                 this.gridX = this.gridX + 1;
+                Doolhof.stappen++;
             }
             else
             {
@@ -54,6 +56,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
                 this.gridY = this.gridY + 1;
+                Doolhof.stappen++;
             }
             else
             {
@@ -67,6 +70,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
                 this.gridX = this.gridX - 1;
+                Doolhof.stappen++;
             }
             else
             {

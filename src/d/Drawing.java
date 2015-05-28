@@ -1,6 +1,7 @@
 package d;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.*;
 
@@ -12,6 +13,7 @@ public class Drawing extends JPanel
 {
     public Drawing()
     {
+       
     }
     
     

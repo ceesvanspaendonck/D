@@ -13,6 +13,7 @@ public class Doolhof extends JPanel
 {
     public static int rows; //horizontaal, dus 10 onder elkaar
     public static int columns; //verticaal, dus 13 naast elkaar 
+    public static int stappen;
     public static int [][] grid = {
                             {1,1,1,1,1,1,1,1,1,1,1,1,1},
                             {1,0,0,0,1,0,0,0,0,0,0,0,1},
@@ -29,6 +30,7 @@ public class Doolhof extends JPanel
     {
         this.rows = rows;
         this.columns = columns;
+        this.stappen = 0;
     }
     
     

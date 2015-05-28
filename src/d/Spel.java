@@ -21,6 +21,9 @@ public class Spel extends JPanel
         
         Speler speler = new Speler(1, 6);
         
+        //JLabel stappen = new JLabel("Aantal stappen: " + Doolhof.stappen); //toevoegen onderaan scherm moet nog gebeuren
+        //stappen.setPreferredSize(new Dimension(300, 100));
+        
         PressListener listener = new PressListener(speler);
         frame.addKeyListener(listener);
         Drawing drawing = new Drawing();
