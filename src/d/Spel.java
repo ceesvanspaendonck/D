@@ -21,11 +21,11 @@ public class Spel extends JPanel
         
         Speler speler = new Speler(1, 6);
         
-        //JLabel stappen = new JLabel("Aantal stappen: " + Doolhof.stappen); //toevoegen onderaan scherm moet nog gebeuren
-        //stappen.setPreferredSize(new Dimension(300, 100));
-        
+        JLabel textLabel = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
+        textLabel.setPreferredSize(new Dimension(300, 100));
         PressListener listener = new PressListener(speler);
         frame.addKeyListener(listener);
+        frame.getContentPane().add(textLabel, BorderLayout.SOUTH);
         Drawing drawing = new Drawing();
         frame.add(drawing);
     }

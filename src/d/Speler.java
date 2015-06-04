@@ -3,6 +3,7 @@ package d;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.*;
+import sun.font.TextLabel;
 
 /**
  *
@@ -43,6 +44,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
                 this.gridX = this.gridX + 1;
                 Doolhof.stappen++;
+                System.out.println(Doolhof.stappen);
             }
             else
             {
