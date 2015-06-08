@@ -32,6 +32,11 @@ public class Drawing extends JPanel
                     g.setColor(Color.ORANGE);
                     g.fillRect(i*25, j*25, 22, 22);
                 }
+                if (Doolhof.grid[j][i]==(3))
+                {
+                    g.setColor(Color.BLUE);
+                    g.fillRect(i*25, j*25, 22, 22);
+                }
             }
         repaint();
      }

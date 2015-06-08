@@ -59,6 +59,11 @@ public class Speler extends JPanel
                 Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
  
             }
+            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
+            {
+                    System.out.println("hahah vriend");
+ 
+            }
 
         }
         else if(richting.equals("left"))

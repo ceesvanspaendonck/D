@@ -23,7 +23,7 @@ public class Doolhof extends JPanel
                             {1,0,1,0,1,1,1,0,1,0,0,0,1},
                             {1,2,1,0,1,0,0,0,1,1,1,0,1},
                             {1,0,1,0,1,1,1,0,1,0,1,0,1},
-                            {1,0,0,0,0,0,0,0,0,0,1,0,1},
+                            {1,0,0,0,0,0,0,0,0,0,1,3,1},
                             {1,1,1,1,1,1,1,1,1,1,1,1,1}};
     
     public Doolhof(int rows, int columns)
@@ -31,6 +31,7 @@ public class Doolhof extends JPanel
         this.rows = rows;
         this.columns = columns;
         this.stappen = 0;
+        //hoi
     }
     
     
