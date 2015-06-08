@@ -38,6 +38,10 @@ public class PressListener implements KeyListener
         if (key == KeyEvent.VK_RIGHT) {
             speler.move("right");
         }
+        if (key == KeyEvent.VK_SPACE)
+        {
+            speler.schiet();
+        }
     }
 
     @Override

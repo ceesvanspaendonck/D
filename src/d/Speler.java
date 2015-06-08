@@ -12,11 +12,15 @@ import sun.font.TextLabel;
 
 public class Speler extends JPanel
 {
-    public static int gridX, gridY;
+    public static int gridX, gridY, stappen;
+    public static boolean heeftBazooka;
+    public static String lastDirection;
     
     public Speler(int gridX, int gridY)
     {
-        int stappen = 0;
+        this.lastDirection = null;
+        this.stappen = 0;
+        this.heeftBazooka = false;
         this.gridX = gridX;
         this.gridY = gridY;
     }
@@ -25,22 +29,32 @@ public class Speler extends JPanel
     {
         if(richting.equals("up"))
         {
-            if(Doolhof.grid[(this.gridY-1)][this.gridX] == 0)
+            this.lastDirection = "north";
+            if(Doolhof.grid[(this.gridY-1)][this.gridX] == 0 || Doolhof.grid[(this.gridY-1)][this.gridX] == 4)
             {
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
                 this.gridY = this.gridY - 1;
+                if(Doolhof.grid[(this.gridY-1)][this.gridX] == 4)
+                {
+                    this.heeftBazooka = true;
+                }
                 updatestappen();
             }
 
         }
         else if(richting.equals("right"))
         {
-            if(Doolhof.grid[this.gridY][(this.gridX + 1)] == 0)
+            this.lastDirection = "east";
+            if(Doolhof.grid[this.gridY][(this.gridX + 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX + 1)] == 4)
             {
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
                 this.gridX = this.gridX + 1;
+                if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 4)
+                {
+                    this.heeftBazooka = true;
+                }
                 updatestappen();
 
             }
@@ -48,31 +62,66 @@ public class Speler extends JPanel
         }
         else if(richting.equals("down"))
         {
-            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 0)
+            this.lastDirection = "south";
+            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 0 || Doolhof.grid[(this.gridY + 1)][this.gridX] == 4)
             {
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
                 this.gridY = this.gridY + 1;
+                if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 4)
+                {
+                    this.heeftBazooka = true;
+                }
                 updatestappen();
- 
             }
             if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
             {
                     System.out.println("hahah vriend");
- 
             }
 
         }
         else if(richting.equals("left"))
         {
-            if(Doolhof.grid[this.gridY][(this.gridX - 1)] == 0)
+            this.lastDirection = "west";
+            if(Doolhof.grid[this.gridY][(this.gridX - 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX - 1)] == 4)
             {
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
                 this.gridX = this.gridX - 1;
+                if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 4)
+                {
+                    this.heeftBazooka = true;
+                }
                 updatestappen();
             }
 
+        }
+    }
+    
+    public static void schiet()
+    {
+        if(heeftBazooka == true)
+        {
+            if(lastDirection.equals("north") && Doolhof.grid[gridY - 1][gridX] == 1)
+            {
+                    Doolhof.grid[gridY - 1][gridX] = 0;
+                
+            }
+            if(lastDirection.equals("east") && Doolhof.grid[gridY][gridX + 1] == 1)
+            {
+                    Doolhof.grid[gridY][gridX + 1] = 0;
+                
+            }
+            if(lastDirection.equals("south") && Doolhof.grid[gridY + 1][gridX] == 1)
+            {
+                    Doolhof.grid[gridY + 1][gridX] = 0;
+            }
+            if(lastDirection.equals("west") && Doolhof.grid[gridY][gridX - 1] == 1)
+            {  
+                Doolhof.grid[gridY][gridX - 1] = 0;
+            }
+            heeftBazooka = false;
+        
         }
     }
     
