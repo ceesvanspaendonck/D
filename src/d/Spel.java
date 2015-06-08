@@ -32,5 +32,5 @@ public class Spel extends JPanel
         Drawing drawing = new Drawing();
         frame.add(drawing);
     }
-    
+
 }

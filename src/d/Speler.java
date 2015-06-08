@@ -30,8 +30,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
                 this.gridY = this.gridY - 1;
-                Doolhof.stappen++;
-                Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
+                updatestappen();
             }
 
         }
@@ -42,8 +41,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
                 this.gridX = this.gridX + 1;
-                Doolhof.stappen++;
-                Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
+                updatestappen();
 
             }
 
@@ -55,8 +53,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
                 this.gridY = this.gridY + 1;
-                Doolhof.stappen++;
-                Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
+                updatestappen();
  
             }
             if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
@@ -73,8 +70,7 @@ public class Speler extends JPanel
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
                 this.gridX = this.gridX - 1;
-                Doolhof.stappen++;
-                Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
+                updatestappen();
             }
 
         }
@@ -100,5 +96,9 @@ public class Speler extends JPanel
         
      
 }
+        public void updatestappen(){
+        Doolhof.stappen++;
+        Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
+    }
 }
 
