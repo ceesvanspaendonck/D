@@ -41,6 +41,10 @@ public class Speler extends JPanel
                 }
                 updatestappen();
             }
+            if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
+            {
+                    System.out.println("hahah vriend");
+            }
 
         }
         else if(richting.equals("right"))
@@ -56,7 +60,10 @@ public class Speler extends JPanel
                     this.heeftBazooka = true;
                 }
                 updatestappen();
-
+            }
+            if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
+            {
+                    System.out.println("hahah vriend");
             }
 
         }
@@ -93,6 +100,10 @@ public class Speler extends JPanel
                     this.heeftBazooka = true;
                 }
                 updatestappen();
+            }
+            if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
+            {
+                    System.out.println("hahah vriend");
             }
 
         }
