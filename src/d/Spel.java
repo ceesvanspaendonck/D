@@ -10,6 +10,8 @@ import java.awt.*;
 
 public class Spel extends JPanel
 {
+    public static JLabel stappen;
+    
     public static void main(String[] args)
     {
         JFrame frame = new JFrame("Doolhof YO");
@@ -21,12 +23,14 @@ public class Spel extends JPanel
         
         Speler speler = new Speler(1, 6);
         
-        JLabel textLabel = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
-        textLabel.setPreferredSize(new Dimension(300, 100));
+        stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
+        stappen.setPreferredSize(new Dimension(300, 100));
+        stappen.setVisible(true);
         PressListener listener = new PressListener(speler);
         frame.addKeyListener(listener);
-        frame.getContentPane().add(textLabel, BorderLayout.SOUTH);
+        frame.getContentPane().add(stappen, BorderLayout.SOUTH);
         Drawing drawing = new Drawing();
         frame.add(drawing);
     }
+    
 }

@@ -11,12 +11,10 @@ import javax.swing.*;
  */
 public class Drawing extends JPanel
 {
-    public Drawing()
-    {
-       
-    }
+
     
     
+    @Override
     public void paintComponent (Graphics g)
     {
         super.paintComponent(g);
