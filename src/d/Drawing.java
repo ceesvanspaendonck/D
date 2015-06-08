@@ -22,7 +22,7 @@ public class Drawing extends JPanel
         {
             for (int j = 0; j < Doolhof.columns; j++) //13
             {
-                if (Doolhof.grid[j][i] == (1))
+                if (Doolhof.grid[j][i] == (1) || Doolhof.grid[j][i] == (5))
                 {
                     g.setColor(Color.red);
                     g.fillRect(i*25, j*25, 24, 24);
