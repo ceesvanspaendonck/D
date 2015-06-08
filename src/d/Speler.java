@@ -113,25 +113,52 @@ public class Speler extends JPanel
     {
         if(heeftBazooka == true)
         {
-            if(lastDirection.equals("north") && Doolhof.grid[gridY - 1][gridX] == 1)
+            if(lastDirection.equals("north"))
             {
-                    Doolhof.grid[gridY - 1][gridX] = 0;
-                
+                for (int i = gridY; i >= 0; i--)
+                {
+                    if(Doolhof.grid[i][gridX] == 1)
+                    {
+                        Doolhof.grid[i][gridX] = 0;
+                        i = -1;                      
+                    }
+                }
             }
-            if(lastDirection.equals("east") && Doolhof.grid[gridY][gridX + 1] == 1)
+            
+            if(lastDirection.equals("east"))
             {
-                    Doolhof.grid[gridY][gridX + 1] = 0;
-                
+                for (int i = gridX; i <= Doolhof.rows; i++)
+                {
+                    if(Doolhof.grid[gridY][i] == 1)
+                    {
+                        Doolhof.grid[gridY][i] = 0;
+                        i = 15;
+                    }
+                }
             }
-            if(lastDirection.equals("south") && Doolhof.grid[gridY + 1][gridX] == 1)
+            if(lastDirection.equals("south"))
             {
-                    Doolhof.grid[gridY + 1][gridX] = 0;
+                for (int i = gridY; i <= 10; i++)
+                {
+                    if(Doolhof.grid[i][gridX] == 1)
+                    {
+                        Doolhof.grid[i][gridX] = 0;
+                        i = 15;                      
+                    }
+                }
             }
-            if(lastDirection.equals("west") && Doolhof.grid[gridY][gridX - 1] == 1)
+            if(lastDirection.equals("west"))
             {  
-                Doolhof.grid[gridY][gridX - 1] = 0;
+                for (int i = gridX; i >= 0; i--)
+                {
+                    if(Doolhof.grid[gridY][i] == 1)
+                    {
+                        Doolhof.grid[gridY][i] = 0;
+                        i = -1;
+                    }
+                }
             }
-            heeftBazooka = false;
+            //heeftBazooka = false;
         
         }
     }
