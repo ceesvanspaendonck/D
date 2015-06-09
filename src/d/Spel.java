@@ -33,7 +33,7 @@ public class Spel extends JPanel
         frame.getContentPane().add(stappen, BorderLayout.SOUTH);
         Drawing drawing = new Drawing();
         frame.add(drawing);
-        frame.setSize(401,601);
+        frame.repaint();
     }
 
 }

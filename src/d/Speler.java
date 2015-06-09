@@ -120,30 +120,30 @@ public class Speler extends JPanel
                     if(Doolhof.grid[i][gridX] == 1)
                     {
                         Doolhof.grid[i][gridX] = 0;
-                        i = -1;                      
+                        break;                     
                     }
                 }
             }
             
             if(lastDirection.equals("east"))
             {
-                for (int i = gridX; i <= Doolhof.rows; i++)
+                for (int i = gridX; i < 14; i++)
                 {
                     if(Doolhof.grid[gridY][i] == 1)
                     {
                         Doolhof.grid[gridY][i] = 0;
-                        i = 16;
+                        break;
                     }
                 }
             }
             if(lastDirection.equals("south"))
             {
-                for (int i = gridY; i <= 10; i++)
+                for (int i = gridY; i < 15; i++)
                 {
                     if(Doolhof.grid[i][gridX] == 1)
                     {
                         Doolhof.grid[i][gridX] = 0;
-                        i = 16;                      
+                        break;                      
                     }
                 }
             }
@@ -154,7 +154,7 @@ public class Speler extends JPanel
                     if(Doolhof.grid[gridY][i] == 1)
                     {
                         Doolhof.grid[gridY][i] = 0;
-                        i = -1;
+                        break;
                     }
                 }
             }
