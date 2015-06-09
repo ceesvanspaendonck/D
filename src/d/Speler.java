@@ -32,13 +32,13 @@ public class Speler extends JPanel
             this.lastDirection = "north";
             if(Doolhof.grid[(this.gridY-1)][this.gridX] == 0 || Doolhof.grid[(this.gridY-1)][this.gridX] == 4)
             {
-                Doolhof.grid[gridY][gridX] = 0;
-                Doolhof.grid[(gridY - 1)][gridX] = 2;
-                this.gridY = this.gridY - 1;
-                if(Doolhof.grid[(this.gridY-1)][this.gridX] == 4)
+                if(Doolhof.grid[(gridY-1)][gridX] == 4)
                 {
                     this.heeftBazooka = true;
                 }
+                Doolhof.grid[gridY][gridX] = 0;
+                Doolhof.grid[(gridY - 1)][gridX] = 2;
+                this.gridY = this.gridY - 1;
                 updatestappen();
             }
             if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
@@ -52,13 +52,13 @@ public class Speler extends JPanel
             this.lastDirection = "east";
             if(Doolhof.grid[this.gridY][(this.gridX + 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX + 1)] == 4)
             {
-                Doolhof.grid[gridY][gridX] = 0;
-                Doolhof.grid[gridY][(gridX + 1)] = 2;
-                this.gridX = this.gridX + 1;
                 if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 4)
                 {
                     this.heeftBazooka = true;
                 }
+                Doolhof.grid[gridY][gridX] = 0;
+                Doolhof.grid[gridY][(gridX + 1)] = 2;
+                this.gridX = this.gridX + 1;
                 updatestappen();
             }
             if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
@@ -72,13 +72,13 @@ public class Speler extends JPanel
             this.lastDirection = "south";
             if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 0 || Doolhof.grid[(this.gridY + 1)][this.gridX] == 4)
             {
-                Doolhof.grid[gridY][gridX] = 0;
-                Doolhof.grid[(gridY + 1)][gridX] = 2;
-                this.gridY = this.gridY + 1;
                 if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 4)
                 {
                     this.heeftBazooka = true;
                 }
+                Doolhof.grid[gridY][gridX] = 0;
+                Doolhof.grid[(gridY + 1)][gridX] = 2;
+                this.gridY = this.gridY + 1;
                 updatestappen();
             }
             if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
@@ -92,13 +92,13 @@ public class Speler extends JPanel
             this.lastDirection = "west";
             if(Doolhof.grid[this.gridY][(this.gridX - 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX - 1)] == 4)
             {
-                Doolhof.grid[gridY][gridX] = 0;
-                Doolhof.grid[gridY][(gridX - 1)] = 2;
-                this.gridX = this.gridX - 1;
                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 4)
                 {
                     this.heeftBazooka = true;
                 }
+                Doolhof.grid[gridY][gridX] = 0;
+                Doolhof.grid[gridY][(gridX - 1)] = 2;
+                this.gridX = this.gridX - 1;
                 updatestappen();
             }
             if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
@@ -158,7 +158,7 @@ public class Speler extends JPanel
                     }
                 }
             }
-            //heeftBazooka = false;
+            heeftBazooka = false;
         
         }
     }
@@ -182,9 +182,11 @@ public class Speler extends JPanel
         
      
 }
-        public void updatestappen(){
+    public void updatestappen()
+    {
         Doolhof.stappen++;
-        Spel.stappen.setText("Aantal godverdomme stappen: " + Doolhof.stappen);
+
+        Spel.stappen.setText("Aantal godverdomme stappen: " + Doolhof.stappen);   
     }
 }
 
