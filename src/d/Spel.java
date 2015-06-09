@@ -15,17 +15,14 @@ public class Spel extends JPanel
     
     public static void main(String[] args) throws FileNotFoundException
     {
-        JFrame frame = new JFrame("Doolhof YO");
+        JFrame frame = new JFrame("Best Doolhof Ever");
         frame.setVisible(true);
-        frame.setSize(400,400);
+        frame.setSize(400,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        Doolhof doolhofP = new Doolhof(13, 10); //eerst rijen (horizontaal), dan kolommen (verticaal)
-        
-        Doolhof.vormGrid();
+        Doolhof doolhofP = new Doolhof(15, 15);
         
         Speler speler = new Speler(1, 6);
-        
         Bazooka bazooka = new Bazooka(1, 1);
         
         stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
@@ -36,6 +33,7 @@ public class Spel extends JPanel
         frame.getContentPane().add(stappen, BorderLayout.SOUTH);
         Drawing drawing = new Drawing();
         frame.add(drawing);
+        frame.setSize(401,601);
     }
 
 }

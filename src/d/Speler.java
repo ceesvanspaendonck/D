@@ -24,7 +24,7 @@ public class Speler extends JPanel
         this.gridX = gridX;
         this.gridY = gridY;
     }
-      //doolhof hehehe= newdoolhof();
+    
     public void move(String richting)
     {
         if(richting.equals("up"))
@@ -132,7 +132,7 @@ public class Speler extends JPanel
                     if(Doolhof.grid[gridY][i] == 1)
                     {
                         Doolhof.grid[gridY][i] = 0;
-                        i = 15;
+                        i = 16;
                     }
                 }
             }
@@ -143,7 +143,7 @@ public class Speler extends JPanel
                     if(Doolhof.grid[i][gridX] == 1)
                     {
                         Doolhof.grid[i][gridX] = 0;
-                        i = 15;                      
+                        i = 16;                      
                     }
                 }
             }
@@ -167,11 +167,10 @@ public class Speler extends JPanel
     public void paintComponent (Graphics g)
     {
         super.paintComponent(g);
-        for (int i = 0; i < Doolhof.rows; i++)  //10
+        for (int i = 0; i < Doolhof.rows; i++)
         {
-            for (int j = 0; j < Doolhof.columns; j++) //13
+            for (int j = 0; j < Doolhof.columns; j++)
             {
-
                 if (Doolhof.grid[j][i]==(2))
                 {
                     g.setColor(Color.ORANGE);
@@ -185,7 +184,7 @@ public class Speler extends JPanel
 }
         public void updatestappen(){
         Doolhof.stappen++;
-        Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);
+        Spel.stappen.setText("Aantal godverdomme stappen: " + Doolhof.stappen);
     }
 }
 
