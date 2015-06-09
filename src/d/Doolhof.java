@@ -30,7 +30,7 @@ public class Doolhof extends JPanel
     
     public static void vormGrid() throws FileNotFoundException
     {
-        java.io.File file = new java.io.File("C:/Users/Sony/Documents/NetBeansProjects/D/src/DoolhofTxt.txt");
+        java.io.File file = new java.io.File("C:\\Users\\max\\Desktop\\woo\\D\\src\\Doolhoftxt.txt");
         try
         {
             Scanner input = new Scanner(file);

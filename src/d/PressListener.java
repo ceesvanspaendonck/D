@@ -42,6 +42,10 @@ public class PressListener implements KeyListener
         {
             speler.schiet();
         }
+        if (key == KeyEvent.VK_R)
+        {
+
+        }
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Spel extends JPanel
     {
         JFrame frame = new JFrame("Best Doolhof Ever");
         frame.setVisible(true);
-        frame.setSize(400,600);
+       
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         Doolhof doolhofP = new Doolhof(15, 15);
@@ -32,8 +32,9 @@ public class Spel extends JPanel
         frame.addKeyListener(listener);
         frame.getContentPane().add(stappen, BorderLayout.SOUTH);
         Drawing drawing = new Drawing();
+ 
         frame.add(drawing);
-        frame.repaint();
+               frame.setSize(400,600);
     }
 
 }

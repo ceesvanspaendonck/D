@@ -36,6 +36,10 @@ public class Speler extends JPanel
                 {
                     this.heeftBazooka = true;
                 }
+                  if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 6)
+                {
+                    Doolhof.stappen = Doolhof.stappen + 10;
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
                 this.gridY = this.gridY - 1;
@@ -55,6 +59,10 @@ public class Speler extends JPanel
                 if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 4)
                 {
                     this.heeftBazooka = true;
+                }
+                if(Doolhof.grid[(this.gridY)][this.gridX+1] == 6)
+                {
+                    Doolhof.stappen = Doolhof.stappen + 10;
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
@@ -76,6 +84,10 @@ public class Speler extends JPanel
                 {
                     this.heeftBazooka = true;
                 }
+                if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 6)
+                {
+                    Doolhof.stappen = Doolhof.stappen + 10;
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
                 this.gridY = this.gridY + 1;
@@ -95,6 +107,10 @@ public class Speler extends JPanel
                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 4)
                 {
                     this.heeftBazooka = true;
+                }
+                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 6)
+                {
+                    Doolhof.stappen = Doolhof.stappen + 10;
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
