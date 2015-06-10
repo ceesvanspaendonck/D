@@ -6,6 +6,9 @@ package d;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComponent;
 
 
@@ -44,7 +47,11 @@ public class PressListener implements KeyListener
         }
         if (key == KeyEvent.VK_R)
         {
-
+            try {
+                Spel.restart();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
