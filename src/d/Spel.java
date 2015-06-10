@@ -24,6 +24,7 @@ public class Spel extends JPanel
         
         Speler speler = new Speler(1, 6);
         Bazooka bazooka = new Bazooka(1, 1);
+        Vriend vriend = new Vriend(1, 4);
         
         stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
         stappen.setPreferredSize(new Dimension(300, 100));

@@ -30,31 +30,31 @@ public class Speler extends JPanel
         if(richting.equals("up"))
         {
             this.lastDirection = "north";
-            if(Doolhof.grid[(this.gridY-1)][this.gridX] == 0 || Doolhof.grid[(this.gridY-1)][this.gridX] == 4|| Doolhof.grid[(this.gridY-1)][this.gridX] == 6)
+            if(Doolhof.grid[(this.gridY-1)][this.gridX] == 0 || Doolhof.grid[(this.gridY-1)][this.gridX] == 4|| Doolhof.grid[(this.gridY-1)][this.gridX] == 6 || Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
             {
                 if(Doolhof.grid[(gridY-1)][gridX] == 4)
                 {
                     this.heeftBazooka = true;
                 }
-                  if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 6)
+                if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 6)
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
+                }
+                if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
+                {
+                    Vriend.solve();
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
                 this.gridY = this.gridY - 1;
                 updatestappen();
+                
             }
-            if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
-
         }
         else if(richting.equals("right"))
         {
             this.lastDirection = "east";
-            if(Doolhof.grid[this.gridY][(this.gridX + 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX + 1)] == 4|| Doolhof.grid[this.gridY][(this.gridX + 1)] == 6)
+            if(Doolhof.grid[this.gridY][(this.gridX + 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX + 1)] == 4|| Doolhof.grid[this.gridY][(this.gridX + 1)] == 6 || Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
             {
                 if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 4)
                 {
@@ -64,21 +64,20 @@ public class Speler extends JPanel
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
                 }
+                if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
+                {
+                    Vriend.solve();
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
                 this.gridX = this.gridX + 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
-
         }
         else if(richting.equals("down"))
         {
             this.lastDirection = "south";
-            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 0 || Doolhof.grid[(this.gridY + 1)][this.gridX] == 4|| Doolhof.grid[(this.gridY + 1)][this.gridX] == 6)
+            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 0 || Doolhof.grid[(this.gridY + 1)][this.gridX] == 4|| Doolhof.grid[(this.gridY + 1)][this.gridX] == 6 || Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
             {
                 if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 4)
                 {
@@ -88,39 +87,39 @@ public class Speler extends JPanel
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
                 }
+                if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
+                {
+                    Vriend.solve();
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
                 this.gridY = this.gridY + 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
-
         }
         else if(richting.equals("left"))
         {
             this.lastDirection = "west";
-            if(Doolhof.grid[this.gridY][(this.gridX - 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX - 1)] == 4|| Doolhof.grid[this.gridY][(this.gridX - 1)] == 6)
+            if(Doolhof.grid[this.gridY][(this.gridX - 1)] == 0 || Doolhof.grid[this.gridY][(this.gridX - 1)] == 4|| Doolhof.grid[this.gridY][(this.gridX - 1)] == 6 || Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
             {
                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 4)
                 {
                     this.heeftBazooka = true;
                 }
-                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 6)
+                if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 6)
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
+                }
+                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
+                {
+                    Vriend.solve();
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
                 this.gridX = this.gridX - 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
+            
 
         }
     }
