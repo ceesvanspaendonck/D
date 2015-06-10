@@ -40,15 +40,16 @@ public class Speler extends JPanel
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
                 }
+                if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
+                {
+                    Vriend.solve();
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
                 this.gridY = this.gridY - 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
+            
 
         }
         else if(richting.equals("right"))
@@ -64,15 +65,16 @@ public class Speler extends JPanel
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
                 }
+                if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
+                {
+                    Vriend.solve();
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
                 this.gridX = this.gridX + 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY)][this.gridX + 1] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
+            
 
         }
         else if(richting.equals("down"))
@@ -88,15 +90,16 @@ public class Speler extends JPanel
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
                 }
+                if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
+                {
+                    Vriend.solve();
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
                 this.gridY = this.gridY + 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
+            
 
         }
         else if(richting.equals("left"))
@@ -112,15 +115,16 @@ public class Speler extends JPanel
                 {
                     Doolhof.stappen = Doolhof.stappen + 10;
                 }
+                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
+                {
+                    Vriend.solve();
+                }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
                 this.gridX = this.gridX - 1;
                 updatestappen();
             }
-            if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 3)
-            {
-                    System.out.println("hahah vriend");
-            }
+            
 
         }
     }
