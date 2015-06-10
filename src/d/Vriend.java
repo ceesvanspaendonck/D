@@ -27,15 +27,15 @@ public class Vriend
     
     public static void showRichtingen()
     {
-        System.out.println("Noord: " + north());
-        System.out.println("Oost: " + east());
-        System.out.println("Zuid: " + south());
-        System.out.println("West: " + west());
+        System.out.println("Noord: " + north(Y, X));
+        System.out.println("Oost: " + east(Y, X));
+        System.out.println("Zuid: " + south(Y, X));
+        System.out.println("West: " + west(Y, X));
     }
     
-    public static boolean north()
+    public static boolean north(int Ytemp, int Xtemp)
     {
-        if(grid[(Y - 1)][X] != 1 && grid[(Y - 1)][X] != 5)
+        if(grid[(Ytemp - 1)][Xtemp] != 1 && grid[(Ytemp - 1)][Xtemp] != 5)
         {
             return true;
         }
@@ -44,9 +44,9 @@ public class Vriend
             return false;
         }
     }
-    public static boolean east()
+    public static boolean east(int Ytemp, int Xtemp)
     {
-        if(grid[Y][(X + 1)] != 1 && grid[Y][(X + 1)] != 5)
+        if(grid[Ytemp][(Xtemp + 1)] != 1 && grid[Ytemp][(Xtemp + 1)] != 5)
         {
             return true;
         }
@@ -55,9 +55,9 @@ public class Vriend
             return false;
         }
     }
-    public static boolean south()
+    public static boolean south(int Ytemp, int Xtemp)
     {
-        if(grid[(Y + 1)][X] != 1 && grid[(Y + 1)][X] != 5)
+        if(grid[(Ytemp + 1)][Xtemp] != 1 && grid[(Ytemp + 1)][Xtemp] != 5)
         {
             return true;
         }
@@ -66,9 +66,9 @@ public class Vriend
             return false;
         }
     }
-    public static boolean west()
+    public static boolean west(int Ytemp, int Xtemp)
     {
-        if(grid[Y][(X - 1)] != 1 && grid[Y][(X - 1)] != 5)
+        if(grid[Ytemp][(Xtemp - 1)] != 1 && grid[Ytemp][(Xtemp - 1)] != 5)
         {
             return true;
         }
