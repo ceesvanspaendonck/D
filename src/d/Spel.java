@@ -28,7 +28,7 @@ public class Spel extends JPanel
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        
         Doolhof doolhofP = new Doolhof(15, 15);
-       
+        Vriend vriend = new Vriend(1, 4);
 
         
         stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
