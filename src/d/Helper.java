@@ -18,6 +18,7 @@ public class Helper {
     public static int X, Y;
     static int[][] grid = new int[15][15];
     public static boolean verandering = true;
+    public static Tegel[][] tegelGrid ;// deze is static waardoor je er bij kan in andere dingen zoals solve 
     public Helper(int X, int Y)
     {
         this.X = X;
@@ -27,7 +28,7 @@ public class Helper {
     
     public static void solve() throws FileNotFoundException
     {
-      Tegel[][] tegelGrid = new Tegel[15][15];
+      tegelGrid = new Tegel[15][15];
           
         for (int i = 0; i < 15; i++)
         {
@@ -52,7 +53,7 @@ public class Helper {
         
 
     } 
-public  static void test(Tegel[][]tegelGrid){
+public  static void test(){
             for (int i = 0; i < 1000; i++)
         {
             vindRoute(tegelGrid);

@@ -51,7 +51,7 @@ public class Speler extends JPanel
                 }
                 if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 7) //helper
                 {
-                    Helper.solve();
+                    Helper.test();
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY - 1)][gridX] = 2;
@@ -81,7 +81,7 @@ public class Speler extends JPanel
                 }
                 if(Doolhof.grid[(this.gridY)][this.gridX+1] == 7) //helper
                 {
-                    Helper.solve();
+                    Helper.test();
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX + 1)] = 2;
@@ -111,7 +111,7 @@ public class Speler extends JPanel
                 }
                 if(Doolhof.grid[(this.gridY + 1)][this.gridX] == 7) //helper
                 {
-                    Helper.solve();
+                    Helper.test();
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[(gridY + 1)][gridX] = 2;
@@ -141,7 +141,7 @@ public class Speler extends JPanel
                 }
                 if(Doolhof.grid[(this.gridY)][this.gridX - 1] == 7) //helper
                 {
-                    Helper.solve();
+                    Helper.test();
                 }
                 Doolhof.grid[gridY][gridX] = 0;
                 Doolhof.grid[gridY][(gridX - 1)] = 2;
