@@ -13,7 +13,16 @@ import java.awt.Graphics;
  * @author max
  */
 public class Tegel {
+    public static int x, y, solverWaarde;
+    public static boolean muur;
     
+    public Tegel(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+        this.muur = false;
+        this.solverWaarde = 0;
+    }
     
         public static void Teken (Graphics g , int x ,int y){
     g.setColor(Color.WHITE);

@@ -29,7 +29,7 @@ public class Drawing extends JPanel
                 }
                 if (Doolhof.grid[j][i]==(0))
                 {
-                  Tegel tegel = new Tegel();
+                  Tegel tegel = new Tegel(i, j);
                   tegel.Teken(g,i*25,j*25);
                    
 
@@ -74,7 +74,7 @@ public class Drawing extends JPanel
                 }
                 if (Doolhof.grid[j][i]==(7))
                 {
-                    Helper helper = new Helper(13,12);
+                    Helper helper = new Helper(1,9);
                     helper.Teken(g,i*25,j*25);
                 }
             }

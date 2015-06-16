@@ -29,7 +29,7 @@ public class Spel extends JPanel
     public JButton pauzeButton = new JButton("Pauze");
     public static JButton opnieuwButton = new JButton("Restart");
     
-    
+    static Speler speler = new Speler(1,6);// waarom speler hier dan kan ik hem niet tekenen in drawing met new speler 
     
     public static void main(String[] args) throws FileNotFoundException
     {
@@ -46,7 +46,7 @@ public class Spel extends JPanel
         stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
         stappen.setPreferredSize(new Dimension(300, 100));
         stappen.setVisible(true);
-        Speler speler = new Speler(1,6);// waarom speler hier dan kan ik hem niet tekenen in drawing met new speler 
+        
         listener = new PressListener( speler);
         frame.addKeyListener(listener);
         frame.getContentPane().add(stappen, BorderLayout.SOUTH);
@@ -62,6 +62,7 @@ public class Spel extends JPanel
         Spel.frame.removeKeyListener(listener);
         Spel.frame.dispose();
         Spel.frame.setVisible(false);
+        Spel.frame.remove(speler);
       
         
         frame.setVisible(true);
