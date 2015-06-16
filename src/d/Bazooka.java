@@ -1,9 +1,5 @@
 package d;
 
-import static d.Speler.gridX;
-import static d.Speler.gridY;
-import static d.Speler.heeftBazooka;
-import static d.Speler.lastDirection;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;

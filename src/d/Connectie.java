@@ -1,9 +1,6 @@
 package d;
 
 import java.sql.*;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Connectie
 {
@@ -19,7 +16,7 @@ public class Connectie
             }
             catch (SQLException ex)
             {
-                System.out.println("error");
+                System.out.println("IS DIT HHEM ?");
             }
         }
         return databaseConnectie;
@@ -32,6 +29,7 @@ public class Connectie
         statement.execute(query);
         ResultSet resultSet = statement.getResultSet();
         return resultSet;
+        //String naam , int score , int level
     }
     
     public static void getHighScores()
@@ -56,18 +54,24 @@ public class Connectie
         }
         catch (SQLException ex)
         {
-            System.out.println("Error");
+            System.out.println("ERROR GET HIGHSCORE");
         }
     }
     
-    public static void HighScoreOpslaan() throws SQLException
+    public static void HighScoreOpslaan(String naam , int score, int level) throws SQLException
     {
-        Connection connectie = Connectie.getConnection();
+        Connection connectie = null;
+        connectie = Connectie.getConnection();
+        Connectie connection = new Connectie();
         
-        String organiseerquery = "INSERT INTO Highscore (naam, score) VALUES (?, ?)";
+        String organiseerquery = "INSERT INTO Highscore (naam, score,level) VALUES (?, ?, ?)";
+        System.out.println("1");
         PreparedStatement statement = connectie.prepareStatement(organiseerquery);
-        statement.setString(1, "peter");
-        statement.setInt(2, 90);
+        System.out.println("2");
+        statement.setString(1,naam);
+        statement.setInt(2, score);
+        System.out.println("3");
+        statement.setInt(3, level);
         int rows = statement.executeUpdate();
         if(rows != 1)
         {

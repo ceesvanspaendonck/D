@@ -13,15 +13,21 @@ import java.awt.Graphics;
  * @author max
  */
 public class Tegel {
-    public static int x, y, solverWaarde;
-    public static boolean muur;
+
+    /**
+     *
+     */
+    public   int solverWaarde = 1000;
+    public boolean muur = false;
+    public  int y;
+    public  int x; 
     
     public Tegel(int x, int y)
     {
         this.x = x;
         this.y = y;
         this.muur = false;
-        this.solverWaarde = 0;
+        this.solverWaarde = 1000;
     }
     
         public static void Teken (Graphics g , int x ,int y){

@@ -3,8 +3,8 @@ package d;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import javax.swing.*;
-import sun.font.TextLabel;
 
 /**
  *
@@ -16,6 +16,7 @@ public class Speler extends JPanel
     public static int gridX, gridY, stappen;
     public static boolean heeftBazooka;
     public static String lastDirection;
+
     
     public Speler(int gridX, int gridY)
     {
@@ -26,7 +27,7 @@ public class Speler extends JPanel
         this.gridY = gridY;
     }
     
-    public void move(String richting) throws FileNotFoundException
+    public void move(String richting) throws FileNotFoundException, SQLException
     {
         if(richting.equals("up"))
         {
@@ -43,8 +44,10 @@ public class Speler extends JPanel
                 }
                 if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 3) //vriend
                 {
+                    Connectie.HighScoreOpslaan("hgffggh",Doolhof.stappen,Doolhof.level+1);
                     Doolhof.level++;
                     Spel.restart();
+                    
                 }
                 if(Doolhof.grid[(this.gridY - 1)][this.gridX] == 7) //helper
                 {

@@ -7,9 +7,9 @@ package d;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComponent;
 
 
 public class PressListener implements KeyListener
@@ -34,12 +34,16 @@ public class PressListener implements KeyListener
                 speler.move("up");
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (key == KeyEvent.VK_DOWN) {
             try {
                 speler.move("down");
             } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
                 Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
@@ -48,12 +52,16 @@ public class PressListener implements KeyListener
                 speler.move("left");
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (key == KeyEvent.VK_RIGHT) {
             try {
                 speler.move("right");
             } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
                 Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
