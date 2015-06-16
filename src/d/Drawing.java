@@ -22,30 +22,55 @@ public class Drawing extends JPanel
         {
             for (int j = 0; j < Doolhof.columns; j++) //13
             {
-                if (Doolhof.grid[j][i] == (1) || Doolhof.grid[j][i] == (5))
+                if (Doolhof.grid[j][i] == (1) || Doolhof.grid[j][i] == (5)) //1 = muur, 2 = speler, 3 = vriend, 4 = bazooka, 5 = buiten muur
                 {
-                    g.setColor(Color.red);
-                    g.fillRect(i*25, j*25, 24, 24);
+                  Muur muur = new Muur();
+                  muur.Teken(g, i*25, j*25);
+                }
+                if (Doolhof.grid[j][i]==(0))
+                {
+                  Tegel tegel = new Tegel();
+                  tegel.Teken(g,i*25,j*25);
+                   
+
+                }
+                if (Doolhof.grid[j][i]==(5))
+                {
+                  Buitenmuur buitenmuur = new Buitenmuur();
+                  buitenmuur.Teken(g,i*25,j*25);
+                   
+
+                }
+                 if (Doolhof.grid[j][i]==(1))
+                {
+                  Binnenmuur binnenmuur = new Binnenmuur();
+                  binnenmuur.Teken(g,i*25,j*25);
+                   
+
                 }
                 if (Doolhof.grid[j][i]==(2))
                 {
-                    g.setColor(Color.ORANGE);
-                    g.fillRect(i*25, j*25, 22, 22);
+                  
+//                  public static void Teken (Graphics g , int x ,int y){
+    g.setColor(Color.YELLOW);
+    g.fillRect(i*25, j*25, 22, 22);
+
                 }
                 if (Doolhof.grid[j][i]==(3))
                 {
-                    g.setColor(Color.BLUE);
-                    g.fillRect(i*25, j*25, 22, 22);
+                    Vriend vriend = new Vriend(1,4);
+                    vriend.Teken(g , i*25 , j*25);
+
                 }
                 if (Doolhof.grid[j][i]==(6))
                 {
-                    g.setColor(Color.DARK_GRAY);
-                    g.fillRect(i*25, j*25, 22, 22);
+                    Valsspeler valsspeler = new Valsspeler(3,11);
+                    valsspeler.Teken(g,i*25,j*25);
                 }
-                if (Doolhof.grid[j][i]==(4))
+                if (Doolhof.grid[j][i]==(4))//bazooka
                 {
-                    g.setColor(Color.magenta);
-                    g.fillRect(i*25, j*25, 22, 22);
+                   Bazooka bazooka = new Bazooka(1,1);
+                   bazooka.Teken(g , i*25 , j * 25);
                 }
             }
         super.repaint();

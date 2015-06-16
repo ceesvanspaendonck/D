@@ -5,6 +5,8 @@
  */
 package d;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.*;
 
 /**
@@ -18,5 +20,13 @@ public class Valsspeler extends JPanel {
     {
         this.gridX = gridX;
         this.gridY = gridY;
+    }
+    
+    public static void Teken (Graphics g , int x ,int y){
+    g.setColor(Color.DARK_GRAY);
+    g.fillRect(x, y, 22, 22);
+
+
+       
     }
 }

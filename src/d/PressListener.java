@@ -43,7 +43,7 @@ public class PressListener implements KeyListener
         }
         if (key == KeyEvent.VK_SPACE)
         {
-            speler.schiet();
+            Speler.schiet();
         }
         if (key == KeyEvent.VK_R)
         {

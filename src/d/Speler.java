@@ -208,4 +208,12 @@ public class Speler extends JPanel
 
         Spel.stappen.setText("Aantal stappen: " + Doolhof.stappen);   
     }
+    
+        public static void Teken (Graphics g , int x ,int y){
+    g.setColor(Color.ORANGE);
+    g.fillRect(x, y, 22, 22);
+
+
+       
+    }
 }
