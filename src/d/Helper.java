@@ -18,7 +18,6 @@ public class Helper {
     public static int X, Y;
     static int[][] grid = new int[15][15];
     public static boolean verandering = true;
-    
     public Helper(int X, int Y)
     {
         this.X = X;
@@ -28,7 +27,7 @@ public class Helper {
     
     public static void solve() throws FileNotFoundException
     {
-        Tegel[][] tegelGrid = new Tegel[15][15];
+      Tegel[][] tegelGrid = new Tegel[15][15];
           
         for (int i = 0; i < 15; i++)
         {
@@ -51,13 +50,15 @@ public class Helper {
    
         tegelGrid[Y][X].solverWaarde = 0;
         
-        for (int i = 0; i < 1000; i++)
+
+    } 
+public  static void test(Tegel[][]tegelGrid){
+            for (int i = 0; i < 1000; i++)
         {
             vindRoute(tegelGrid);
         }
-        maakRoute(tegelGrid);
-    } 
-
+          maakRoute(tegelGrid);
+}
     public static void vindRoute(Tegel [][] tegelGrid)
     {   
         for (int i = 1; i < 14; i++)

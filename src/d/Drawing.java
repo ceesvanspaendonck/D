@@ -28,7 +28,7 @@ public class Drawing extends JPanel
                 }
                 if (Doolhof.grid[j][i]==(0))
                 {
-                  Tegel tegel = new Tegel(i, j);
+                  Tegel tegel = Helper.tegelGrid[i][j];//hier gelijk maken aan de grid van helper maar dan moet je de grid van te voren maken en dus moet hij weer static zijn(zie comment in spel)
                   if (tegel.kortstePad==true){
                   tegel.Teken(g,i*25,j*25);
                   }

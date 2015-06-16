@@ -30,7 +30,7 @@ public class Spel extends JPanel
     {
         frame= new JFrame();
         frame.setVisible(true);
-       
+        Helper.solve();// hier maak je dan de grid al van Helper 
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        
         Doolhof doolhofP = new Doolhof(15, 15);
