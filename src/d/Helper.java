@@ -17,6 +17,7 @@ public class Helper {
     
     public static int X, Y;
     static int[][] grid = new int[15][15];
+    public static boolean verandering = true;
     
     public Helper(int X, int Y)
     {
@@ -24,15 +25,8 @@ public class Helper {
         this.Y = Y;
         grid = Doolhof.grid; 
     }
-//    Object[][] obj = new Object[ROWS][COLS];
-//     for(int i = 0 ; i < ROWS ; i++) 
-   // {
-//       for(int j = 0 ; i < COLS; j++) 
-    //{
-//        obj[i][j] = buildNewItem(someValue);
-//    }
-//}
-  public static void solve() throws FileNotFoundException
+    
+    public static void solve() throws FileNotFoundException
     {
         Tegel[][] tegelGrid = new Tegel[15][15];
           
@@ -42,7 +36,7 @@ public class Helper {
             {
                 Tegel tegel = new Tegel(i, j);
                 tegelGrid[i][j] = tegel;
-                tegelGrid[i][j].solverWaarde = 7000;
+                tegelGrid[i][j].solverWaarde = 1000;
                 
                 if(Doolhof.grid[i][j] == 1 || Doolhof.grid[i][j] == 5)
                 {
@@ -52,89 +46,144 @@ public class Helper {
                 {
                     tegelGrid[i][j].muur = false;
                 }
-                if(i == X && j == X)
-                {
-                    tegelGrid[Y][X].solverWaarde = 0;
-                }
-            }   
-        
-        
+            }           
         }
-      
-        //tegelGrid[1][1].solverWaarde=1;
+   
+        tegelGrid[Y][X].solverWaarde = 0;
+        
+        for (int i = 0; i < 1000; i++)
+        {
+            vindRoute(tegelGrid);
+        }
+        maakRoute(tegelGrid);
+    } 
+
+    public static void vindRoute(Tegel [][] tegelGrid)
+    {   
+        for (int i = 1; i < 14; i++)
+        {
+            for (int j = 1; j < 14; j++)
+            {
+                if((tegelGrid[(i - 1)][j].solverWaarde + 1) > tegelGrid[i][j].solverWaarde)
+                {
+                    if(tegelGrid[(i - 1)][j].muur == false)
+                    {
+                        tegelGrid[(i - 1)][j].solverWaarde = tegelGrid[i][j].solverWaarde + 1;
+                        verandering = true;
+                    }
+                }
+                else
+                {
+                    verandering = false;
+                }
+                if((tegelGrid[(i + 1)][j].solverWaarde + 1) > tegelGrid[i][j].solverWaarde)
+                {
+                    if(tegelGrid[(i + 1)][j].muur == false)
+                    {
+                        tegelGrid[(i + 1)][j].solverWaarde = tegelGrid[i][j].solverWaarde + 1;
+                        verandering = true;
+                    }
+                }
+                else
+                {
+                    verandering = false;
+                }
+                if((tegelGrid[i][(j - 1)].solverWaarde + 1) > tegelGrid[i][j].solverWaarde)
+                {
+                    if(tegelGrid[(i)][(j - 1)].muur == false)
+                    {
+                        tegelGrid[(i)][(j - 1)].solverWaarde = tegelGrid[i][j].solverWaarde + 1;
+                        verandering = true;
+                    }
+                }
+                else
+                {
+                    verandering = false;
+                }
+                if((tegelGrid[i][(j + 1)].solverWaarde + 1) > tegelGrid[i][j].solverWaarde)
+                {
+                    if(tegelGrid[i][(j + 1)].muur == false)
+                    {
+                        tegelGrid[i][(j + 1)].solverWaarde = tegelGrid[i][j].solverWaarde + 1;
+                        verandering = true;
+                    }
+                }
+                else
+                {
+                    verandering = false;
+                }
+            }
+        }
+    }
+    
+    public static void maakRoute(Tegel [][] tegelGrid)
+    {
+        int solverWaardeVriend = tegelGrid[(Vriend.Y - 1)][(Vriend.X - 1)].solverWaarde;
+        int solverWaardeVriend2 = solverWaardeVriend;
+        tegelGrid[(Vriend.Y - 1)][(Vriend.X - 1)].kortstePad = true;
+        for (int i = 0; i < solverWaardeVriend2; i++)
+        {
+            checkOnderdeelRoute(tegelGrid, solverWaardeVriend);
+            solverWaardeVriend--;
+        }
+        
         for (int i = 0; i < 15; i++)
         {
             for (int j = 0; j < 15; j++)
             {
-                System.out.print(tegelGrid[i][j].solverWaarde + " - ");
+                System.out.print(tegelGrid[i][j].kortstePad + " \t ");
             }
             System.out.println("");
         }
         
-
-
- 
-  } 
-
-    public static void showRichtingen() throws FileNotFoundException
-    {
-        System.out.println("Noord: " + north(Y, X));
-        System.out.println("Oost: " + east(Y, X));
-        System.out.println("Zuid: " + south(Y, X));
-        System.out.println("West: " + west(Y, X));
-        
-        
     }
     
-    
-    //
-    public static boolean north(int Ytemp, int Xtemp)
+    public static void checkOnderdeelRoute(Tegel [][] tegelGrid, int solverWaardeVriend)
     {
-        if(grid[(Ytemp - 1)][Xtemp] != 1 && grid[(Ytemp - 1)][Xtemp] != 5)
+        for (int i = 1; i < 14; i++)
         {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public static boolean east(int Ytemp, int Xtemp)
-    {
-        if(grid[Ytemp][(Xtemp + 1)] != 1 && grid[Ytemp][(Xtemp + 1)] != 5)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public static boolean south(int Ytemp, int Xtemp)
-    {
-        if(grid[(Ytemp + 1)][Xtemp] != 1 && grid[(Ytemp + 1)][Xtemp] != 5)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public static boolean west(int Ytemp, int Xtemp)
-    {
-        if(grid[Ytemp][(Xtemp - 1)] != 1 && grid[Ytemp][(Xtemp - 1)] != 5)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
+            for (int j = 1; j < 14; j++)
+            {
+                if(tegelGrid[i][j].kortstePad == true)
+                {
+                    if(tegelGrid[(i - 1)][j].solverWaarde == (tegelGrid[i][j].solverWaarde - 1)) //solverWaardeVriend - 2
+                    {
+                        tegelGrid[(i - 1)][j].kortstePad = true;
+                    }
+                    else
+                    {
+                        verandering = false;
+                    }
+                    if(tegelGrid[(i + 1)][j].solverWaarde == (tegelGrid[i][j].solverWaarde - 1))
+                    {
+                        tegelGrid[(i + 1)][j].kortstePad = true;
+                    }
+                    else
+                    {
+                        verandering = false;
+                    }
+                    if(tegelGrid[i][(j - 1)].solverWaarde == (tegelGrid[i][j].solverWaarde - 1))
+                    {
+                        tegelGrid[i][(j - 1)].kortstePad = true;
+                    }
+                    else
+                    {
+                        verandering = false;
+                    }
+                    if(tegelGrid[i][(j + 1)].solverWaarde == (tegelGrid[i][j].solverWaarde - 1))
+                    {
+                        tegelGrid[i][(j + 1)].kortstePad = true;
+                    }
+                    else
+                    {
+                        verandering = false;
+                    }
+                }
+            }
         }
         
     }
-
+   
     public static void Teken (Graphics g , int x ,int y){
     g.setColor(Color.green);
     g.fillRect(x, y, 22, 22);}

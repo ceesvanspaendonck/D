@@ -57,7 +57,7 @@ public class Drawing extends JPanel
                 }
                 if (Doolhof.grid[j][i]==(3))
                 {
-                    Vriend vriend = new Vriend(1,4);
+                    Vriend vriend = new Vriend(10,14);
                     vriend.Teken(g , i*25 , j*25);
 
                 }
@@ -73,7 +73,7 @@ public class Drawing extends JPanel
                 }
                 if (Doolhof.grid[j][i]==(7))
                 {
-                    Helper helper = new Helper(1,9);
+                    Helper helper = new Helper(1,1);
                     helper.Teken(g,i*25,j*25);
                 }
             }

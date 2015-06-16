@@ -31,8 +31,8 @@ public class Doolhof extends JPanel
     public static void vormGrid() throws FileNotFoundException
     {
        
-        java.io.File file = new java.io.File("C:\\Users\\max\\Desktop\\woo\\D\\src\\Doolhoftxt4.txt");
-        //java.io.File file = new java.io.File("C:/Users/Sony/Documents/NetBeansProjects/D/src/DoolhofTxt4.txt");
+        //java.io.File file = new java.io.File("C:\\Users\\max\\Desktop\\woo\\D\\src\\Doolhoftxt4.txt");
+        java.io.File file = new java.io.File("C:/Users/Sony/Documents/NetBeansProjects/D/src/DoolhofTxt4.txt");
         //3 verschillende levels switchen nadat de VRIEND is aangeraakt
         if (level == 1){
              file = new java.io.File("C:\\Users\\max\\Desktop\\woo\\D\\src\\Doolhoftxt5.txt");

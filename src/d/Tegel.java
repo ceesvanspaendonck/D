@@ -19,6 +19,7 @@ public class Tegel {
      */
     public   int solverWaarde = 1000;
     public boolean muur = false;
+    public boolean kortstePad = false;
     public  int y;
     public  int x; 
     
@@ -28,13 +29,21 @@ public class Tegel {
         this.y = y;
         this.muur = false;
         this.solverWaarde = 1000;
+        this.kortstePad = false;
     }
     
-        public static void Teken (Graphics g , int x ,int y){
-    g.setColor(Color.WHITE);
-    g.fillRect(x, y, 25, 25);
-
-
-       
+    
+    public static void Teken (Graphics g , int x ,int y)
+    {
+//        if(kortstePad == true)
+//        {
+            g.setColor(Color.WHITE);
+            g.fillRect(x, y, 25, 25);
+//        }
+//        else
+//        {
+            //g.setColor(Color.WHITE);
+           // g.fillRect(x, y, 25, 25);
+        //}
     }
 }
