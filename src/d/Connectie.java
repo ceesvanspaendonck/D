@@ -66,8 +66,8 @@ public class Connectie
         
         String organiseerquery = "INSERT INTO Highscore (naam, score) VALUES (?, ?)";
         PreparedStatement statement = connectie.prepareStatement(organiseerquery);
-        statement.setString(1, naam);
-        statement.setInt(2, score);
+        statement.setString(1, "peter");
+        statement.setInt(2, 90);
         int rows = statement.executeUpdate();
         if(rows != 1)
         {

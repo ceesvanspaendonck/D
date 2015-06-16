@@ -30,16 +30,32 @@ public class PressListener implements KeyListener
     {
         int key = ke.getKeyCode();
         if (key == KeyEvent.VK_UP) {
-            speler.move("up");
+            try {
+                speler.move("up");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (key == KeyEvent.VK_DOWN) {
-            speler.move("down");
+            try {
+                speler.move("down");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (key == KeyEvent.VK_LEFT) {
-            speler.move("left");
+            try {
+                speler.move("left");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (key == KeyEvent.VK_RIGHT) {
-            speler.move("right");
+            try {
+                speler.move("right");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PressListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (key == KeyEvent.VK_SPACE)
         {

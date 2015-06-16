@@ -72,6 +72,11 @@ public class Drawing extends JPanel
                    Bazooka bazooka = new Bazooka(1,1);
                    bazooka.Teken(g , i*25 , j * 25);
                 }
+                if (Doolhof.grid[j][i]==(7))
+                {
+                    Helper helper = new Helper(13,12);
+                    helper.Teken(g,i*25,j*25);
+                }
             }
         super.repaint();
      }     
