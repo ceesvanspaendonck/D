@@ -14,7 +14,7 @@ import java.awt.Dimension;
 public class Spel extends JPanel
 {
     public static JLabel stappen;
-    static JFrame frame = new JFrame("Best Doolhof Ever");
+    public static JFrame frame;
     static PressListener listener ;
     public JButton startButton = new JButton("Start");
     public JButton pauzeButton = new JButton("Pauze");
@@ -24,7 +24,11 @@ public class Spel extends JPanel
     
     public static void main(String[] args) throws FileNotFoundException
     {
-  
+        start();
+    }
+    public static void start () throws FileNotFoundException
+    {
+        frame= new JFrame();
         frame.setVisible(true);
        
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -38,30 +42,28 @@ public class Spel extends JPanel
         stappen.setPreferredSize(new Dimension(300, 100));
         stappen.setVisible(true);
         
-        listener = new PressListener( speler);
+        listener = new PressListener(speler);
         frame.addKeyListener(listener);
         frame.getContentPane().add(stappen, BorderLayout.SOUTH);
         Drawing drawing = new Drawing();
         frame.add(drawing);
         frame.setSize(400,600);
-   
-    }
-
+}
     public static void restart() throws FileNotFoundException{
         stappen.setText(""); // reset de stappen
-    
-        Spel.frame.removeKeyListener(listener);
-        Spel.frame.dispose();
-        Spel.frame.setVisible(false);
-        Spel.frame.remove(speler);
+         
+        frame.removeKeyListener(listener);
+        frame.dispose();
+        frame.setVisible(false);
+        frame.remove(speler);
       
         
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         Doolhof doolhofP = new Doolhof(15, 15);
-
-        
+        doolhofP.vormGrid();
+        speler = new Speler (1,6);
         stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
         stappen.setPreferredSize(new Dimension(300, 100));
         stappen.setVisible(true);
@@ -73,6 +75,10 @@ public class Spel extends JPanel
         frame.add(drawing);
         frame.setSize(400,600);
        
+    }
+
+    public Spel() {
+        this.frame = new JFrame("Best Doolhof Ever");
     }
 
 }

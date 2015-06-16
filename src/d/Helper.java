@@ -149,6 +149,7 @@ public class Helper {
                     if(tegelGrid[(i - 1)][j].solverWaarde == (tegelGrid[i][j].solverWaarde - 1)) //solverWaardeVriend - 2
                     {
                         tegelGrid[(i - 1)][j].kortstePad = true;
+                        
                     }
                     else
                     {
@@ -157,6 +158,7 @@ public class Helper {
                     if(tegelGrid[(i + 1)][j].solverWaarde == (tegelGrid[i][j].solverWaarde - 1))
                     {
                         tegelGrid[(i + 1)][j].kortstePad = true;
+                        
                     }
                     else
                     {

@@ -29,8 +29,15 @@ public class Drawing extends JPanel
                 if (Doolhof.grid[j][i]==(0))
                 {
                   Tegel tegel = new Tegel(i, j);
+                  if (tegel.kortstePad==true){
                   tegel.Teken(g,i*25,j*25);
-                   
+                  }
+                  else {
+                      tegel.Teken(g, i*25, j*25);
+                  }
+                  
+                  
+                 
 
                 }
                 if (Doolhof.grid[j][i]==(5))

@@ -7,19 +7,21 @@ package d;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  *
  * @author max
  */
-public class Tegel {
+public class Tegel extends Drawing {
 
     /**
      *
      */
     public   int solverWaarde = 1000;
     public boolean muur = false;
-    public boolean kortstePad = false;
+    public  boolean kortstePad = false;
     public  int y;
     public  int x; 
     
@@ -31,19 +33,22 @@ public class Tegel {
         this.solverWaarde = 1000;
         this.kortstePad = false;
     }
-    
-    
-    public static void Teken (Graphics g , int x ,int y)
+
+ 
+    public void Teken (Graphics g , int x ,int y)
     {
-//        if(kortstePad == true)
-//        {
+         super.repaint();
+        if(kortstePad == true)
+        {
+              g.setColor(Color.PINK);
+            g.fillRect(x, y, 5, 5);
+        }
+        else
+        {
             g.setColor(Color.WHITE);
             g.fillRect(x, y, 25, 25);
-//        }
-//        else
-//        {
-            //g.setColor(Color.WHITE);
-           // g.fillRect(x, y, 25, 25);
-        //}
+        }
     }
+
+
 }
