@@ -29,14 +29,10 @@ public class Drawing extends JPanel
                 if (Doolhof.grid[j][i]==(0))
                 {
                   Tegel tegel = Helper.tegelGrid[i][j];//hier gelijk maken aan de grid van helper maar dan moet je de grid van te voren maken en dus moet hij weer static zijn(zie comment in spel)
-                  if (tegel.kortstePad==true){
-                          g.setColor(Color.black);//maakt een zwart vierkantje waar true is 
-                          g.fillRect(i*25, j*25, 25, 25);
-                  }
-                  else {
-                          g.setColor(Color.WHITE);
-                          g.fillRect(i*25, j*25, 25, 25);
-                  }
+                  
+                tegel.Teken(g, i*25, j*25);
+                  
+                
 
                 }
                 if (Doolhof.grid[j][i]==(5))
@@ -63,7 +59,7 @@ public class Drawing extends JPanel
                 }
                 if (Doolhof.grid[j][i]==(3))
                 {
-                    Vriend vriend = new Vriend(10,14);
+                    Vriend vriend = new Vriend(2,8);
                     vriend.Teken(g , i*25 , j*25);
 
                 }

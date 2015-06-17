@@ -26,11 +26,13 @@ public class Spel extends JPanel
     {
         start();
     }
+    
+    
     public static void start () throws FileNotFoundException
     {
         frame= new JFrame();
         frame.setVisible(true);
-        Helper.solve();// hier maak je dan de grid al van Helper 
+        Helper.solve();// hier maak je dan de grid al van Helper
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
        
         Doolhof doolhofP = new Doolhof(15, 15);
@@ -62,7 +64,7 @@ public class Spel extends JPanel
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         Doolhof doolhofP = new Doolhof(15, 15);
-        doolhofP.vormGrid();
+        //doolhofP.vormGrid();
         speler = new Speler (1,6);
         stappen = new JLabel("Aantal stappen: " + Doolhof.stappen,SwingConstants.CENTER);
         stappen.setPreferredSize(new Dimension(300, 100));

@@ -18,7 +18,8 @@ public class Helper {
     public static int X, Y;
     static int[][] grid = new int[15][15];
     public static boolean verandering = true;
-    public static Tegel[][] tegelGrid ;// deze is static waardoor je er bij kan in andere dingen zoals solve 
+    static Tegel[][] tegelGrid;
+    //public static Tegel[][] tegelGrid ;// deze is static waardoor je er bij kan in andere dingen zoals solve 
     public Helper(int X, int Y)
     {
         this.X = X;
@@ -50,15 +51,16 @@ public class Helper {
         }
    
         tegelGrid[Y][X].solverWaarde = 0;
-        
 
     } 
-public  static void test(){
-            for (int i = 0; i < 1000; i++)
+public static void test(){
+      for (int i = 0; i < 1000; i++)
         {
             vindRoute(tegelGrid);
         }
+                    {
           maakRoute(tegelGrid);
+}
 }
     public static void vindRoute(Tegel [][] tegelGrid)
     {   

@@ -35,16 +35,18 @@ public class Tegel extends Drawing {
     }
 
  
-    public void Teken (Graphics g , int x ,int y)
+    public  void Teken (Graphics g , int x ,int y)
     {
-         super.repaint();
-        if(kortstePad == true)
+         
+        if(this.kortstePad == true)
         {
+            System.out.println("true");
               g.setColor(Color.PINK);
             g.fillRect(x, y, 5, 5);
         }
         else
         {
+           
             g.setColor(Color.WHITE);
             g.fillRect(x, y, 25, 25);
         }
